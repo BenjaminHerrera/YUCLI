@@ -1,5 +1,5 @@
-import _structure
-import _header
+from yucli import _header
+from yucli import _structure
 from kivy.core.window import Window
 from time import strftime, gmtime
 from kivy.config import Config
