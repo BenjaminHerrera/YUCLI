@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
 
+long_description = open('README.text').read() + '\n\n' + open('CHANGELOG.txt').read()
+
 classifiers = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
@@ -12,7 +14,7 @@ setup(
     name='YUCLI',
     version='1.0.0',
     description='A customizable command line environment for Python projects',
-    long_description=open('README.text').read() + '\n\n' + open('CHANGELOG.txt').read(),
+    long_description=long_description,
     url='https://github.com/BenjaminHerrera/YUCLI',
     author='Benjamin Herrera',
     author_email='BenHerrera1044@outlook.com',
