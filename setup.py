@@ -16,6 +16,7 @@ setup(
     version='1.0.0',
     description='A customizable command line environment for Python projects',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://github.com/BenjaminHerrera/YUCLI',
     author='Benjamin Herrera',
     author_email='BenHerrera1044@outlook.com',
