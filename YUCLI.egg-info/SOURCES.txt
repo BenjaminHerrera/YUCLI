@@ -13,6 +13,11 @@ yucli/_header.py
 yucli/_structure.py
 yucli/console.py
 yucli/structure.kv
+yucli.egg-info/PKG-INFO
+yucli.egg-info/SOURCES.txt
+yucli.egg-info/dependency_links.txt
+yucli.egg-info/requires.txt
+yucli.egg-info/top_level.txt
 yucli/asset/CascadiaCode.ttf
 yucli/asset/LICENSE.txt
 yucli/asset/icon.png
