@@ -12,7 +12,7 @@ setup(
     name='YUCLI',
     version='1.0.0',
     description='A customizable command line environment for Python projects',
-    long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
+    long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.txt').read(),
     url='https://github.com/BenjaminHerrera/YUCLI',
     author='Benjamin Herrera',
     author_email='BenHerrera1044@outlook.com',
