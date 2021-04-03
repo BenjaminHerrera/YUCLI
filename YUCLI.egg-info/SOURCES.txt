@@ -1,8 +1,8 @@
-CHANGELOG.txt
 LICENSE.txt
 MANIFEST.in
 README.md
 setup.py
+test.py
 YUCLI.egg-info/PKG-INFO
 YUCLI.egg-info/SOURCES.txt
 YUCLI.egg-info/dependency_links.txt
