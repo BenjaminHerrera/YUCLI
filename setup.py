@@ -12,7 +12,7 @@ classifiers = [
 ]
 
 setup(
-    name='YUCLI',
+    name='yucli',
     version='1.0.0',
     description='A customizable command line environment for Python projects',
     long_description=long_description,
