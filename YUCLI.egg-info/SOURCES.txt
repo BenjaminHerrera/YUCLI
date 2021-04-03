@@ -1,7 +1,7 @@
 CHANGELOG.txt
 LICENSE.txt
 MANIFEST.in
-README.txt
+README.md
 setup.py
 YUCLI.egg-info/PKG-INFO
 YUCLI.egg-info/SOURCES.txt
