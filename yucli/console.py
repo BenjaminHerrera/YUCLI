@@ -18,7 +18,7 @@ class Console(App):
     """
 
     def __init__(self, width, height, title="Console", resizable=False,
-                 greeting_text="YUCLI [v1.0.1]", icon_path=None, **kwargs):
+                 greeting_text="YUCLI [v1.0.0.1]", icon_path=None, **kwargs):
         """Constructor for console class
 
         Constructs an instance of the Console class
