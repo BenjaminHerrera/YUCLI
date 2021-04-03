@@ -1,4 +1,4 @@
-import _header
+from yucli import _header
 from kivy.uix.widget import Widget
 from time import strftime, gmtime
 from kivy.clock import Clock
