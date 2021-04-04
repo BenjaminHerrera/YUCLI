@@ -18,7 +18,8 @@ class Console(App):
     """
 
     def __init__(self, width, height, title="Console", resizable=False,
-                 greeting_text="YUCLI [v1.0.0.2]", icon_path=None, **kwargs):
+                 greeting_text="YUCLI [v1.1.0.0]", icon_path=None,
+                 font_path=None, **kwargs):
         """Constructor for console class
 
         Constructs an instance of the Console class
@@ -29,6 +30,7 @@ class Console(App):
         :param resizable: [BOOLEAN] Whether or not the console should be resizable
         :param greeting_text: [STRING] Beginning text to display upon console window creation
         :param icon_path: [STRING] Path to icon for console window
+        :param font_path: [STRING] Path to .ttf file for console
         """
         # Intakes values from parameters to instance variables
         self.width = width
@@ -37,12 +39,13 @@ class Console(App):
         self.resizable = resizable
         self.greeting_text = greeting_text
         self.icon_path = icon_path
+        self.font_path = font_path
 
         # Calls app constructor
         super().__init__(**kwargs)
 
         # Creates a widgets class to initiate widgets
-        self.structure = _structure.Structure(self.width, self.height)
+        self.structure = _structure.Structure(self.width, self.height, self.font_path)
 
         # Displays greeting text upon window creation if applicable
         if self.greeting_text is not None:

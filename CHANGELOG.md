@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+v1.1.0.0 
+---------------
+- Fix
+  ---
+    - Fixed code commenting inconsistencies
+  
+- Add
+  ---
+    - Added the ability to use custom fonts
+
 v1.0.0.2 (3 March 2021)
 ---------------
 - Fix
