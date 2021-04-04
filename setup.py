@@ -13,7 +13,7 @@ classifiers = [
 
 setup(
     name='YUCLI',
-    version='1.0.0.1',
+    version='1.0.0.2',
     description='A customizable command line environment for Python projects',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,5 +24,6 @@ setup(
     classifiers=classifiers,
     keywords='',
     packages=find_packages(),
-    install_requires=['kivy>=2.0.0']
+    install_requires=['kivy>=2.0.0'],
+    include_package_data=True
 )

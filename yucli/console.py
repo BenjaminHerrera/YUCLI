@@ -18,7 +18,7 @@ class Console(App):
     """
 
     def __init__(self, width, height, title="Console", resizable=False,
-                 greeting_text="YUCLI [v1.0.0.1]", icon_path=None, **kwargs):
+                 greeting_text="YUCLI [v1.0.0.2]", icon_path=None, **kwargs):
         """Constructor for console class
 
         Constructs an instance of the Console class
@@ -44,6 +44,10 @@ class Console(App):
         # Creates a widgets class to initiate widgets
         self.structure = _structure.Structure(self.width, self.height)
 
+        # Displays greeting text upon window creation if applicable
+        if self.greeting_text is not None:
+            self.structure.ids.prompt.text += self.greeting_text + "\n\n"
+
     def build(self):
         """Window Constructor Method
 
@@ -64,10 +68,6 @@ class Console(App):
             self.icon = os.path.dirname(os.path.realpath(__file__)) + '/asset/icon.png'
         else:
             self.icon = self.icon_path
-
-        # Displays greeting text upon window creation if applicable
-        if self.greeting_text is not None:
-            self.structure.ids.prompt.text += self.greeting_text + "\n\n"
 
         # Returns structure class
         return self.structure
