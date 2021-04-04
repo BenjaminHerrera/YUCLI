@@ -10,7 +10,7 @@ v1.1.0.0
   
 - Add
   ---
-    - Made it so that functions assigned to a command need to have a `parameters` parameter
+    - Made it so that functions assigned to a command need to have a `arguments` parameter
     - Added the ability to use custom fonts
 
 v1.0.0.2 (3 March 2021)
