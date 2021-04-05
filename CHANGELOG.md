@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-v1.1.0.0 
---------
+v1.1.0.0 (5 March 2021)
+-----------------------
 - Fix
   ---
     - Fixed code commenting inconsistencies
