@@ -13,20 +13,28 @@ class Structure(Widget):
     # Class variables
     text_font = os.path.dirname(os.path.realpath(__file__)) + "/asset/CascadiaCode.ttf"
 
-    def __init__(self, width, height, **kwargs):
+    def __init__(self, width, height, font_path=None, **kwargs):
         """Constructor for Structure class
 
         Constructs an instance of the structure class
-        :param width: [INTEGER], width specification of the console window
-        :param height: [INTEGER], height specification of the console window
+        :param width: [INTEGER] Width specification of the console window
+        :param height: [INTEGER] Height specification of the console window
+        :param font_path: [STRING] Path to custom font if specified
         """
         # Intakes values from parameters to instance variables and initializes variables
         self.width = width
         self.height = height
+        self.font_path = font_path
         self.commands = {}
 
         # Calculates widget dimension specifications
         Structure.text_input_top_height = (self.height - 32) / self.height
+
+        # Changes text_font if font_path is specified
+        if self.font_path is not None:
+            Structure.text_font = self.font_path
+        else:
+            pass
 
         # Calls widget constructor
         super().__init__(**kwargs)
@@ -43,7 +51,7 @@ class Structure(Widget):
         # Calls whatever method is stored in
         if self.ids.user_input.text.split()[0] in self.commands:
             try:
-                self.commands[self.ids.user_input.text.split()[0]](self.ids.user_input.text.split()[1:])
+                self.commands[self.ids.user_input.text.split()[0]](arguments=self.ids.user_input.text.split()[1:])
             except IndexError:
                 pass
 

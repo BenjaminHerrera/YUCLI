@@ -10,3 +10,5 @@ Links
 GitHub: https://github.com/BenjaminHerrera/YUCLI/
 
 PyPi: https://pypi.org/project/YUCLI/
+
+Wiki: https://github.com/BenjaminHerrera/YUCLI/wiki

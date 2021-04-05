@@ -18,7 +18,8 @@ class Console(App):
     """
 
     def __init__(self, width, height, title="Console", resizable=False,
-                 greeting_text="YUCLI [v1.0.0.2]", icon_path=None, **kwargs):
+                 greeting_text="YUCLI [v1.1.0.0]", icon_path=None,
+                 font_path=None, **kwargs):
         """Constructor for console class
 
         Constructs an instance of the Console class
@@ -29,6 +30,7 @@ class Console(App):
         :param resizable: [BOOLEAN] Whether or not the console should be resizable
         :param greeting_text: [STRING] Beginning text to display upon console window creation
         :param icon_path: [STRING] Path to icon for console window
+        :param font_path: [STRING] Path to .ttf file for console
         """
         # Intakes values from parameters to instance variables
         self.width = width
@@ -37,16 +39,20 @@ class Console(App):
         self.resizable = resizable
         self.greeting_text = greeting_text
         self.icon_path = icon_path
+        self.font_path = font_path
 
         # Calls app constructor
         super().__init__(**kwargs)
 
         # Creates a widgets class to initiate widgets
-        self.structure = _structure.Structure(self.width, self.height)
+        self.structure = _structure.Structure(self.width, self.height, self.font_path)
 
         # Displays greeting text upon window creation if applicable
         if self.greeting_text is not None:
-            self.structure.ids.prompt.text += self.greeting_text + "\n\n"
+            if self.greeting_text is "":
+                pass
+            else:
+                self.structure.ids.prompt.text += self.greeting_text + "\n\n"
 
     def build(self):
         """Window Constructor Method
@@ -72,7 +78,7 @@ class Console(App):
         # Returns structure class
         return self.structure
 
-    def new_line(self, text, header="INFO"):
+    def print_new_line(self, text, header="INFO"):
         """Insert Text Method
 
         Inserts text into console
@@ -82,6 +88,34 @@ class Console(App):
         """
         # Prints a new line with specified text
         self.structure.ids.prompt.text += _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+
+    def print_replace_line(self, text, header="INFO"):
+        """Line Replacer Method
+
+        Replaces the line before with the specified text
+
+        :param text: [STRING] Text to replace previous line in the console
+        :param header: [STRING] Type of header to append to new line
+        """
+        # Get history of lines on the console into list format
+        console_log = self.structure.ids.prompt.text.splitlines()
+
+        print(console_log)
+        print(len(console_log))
+
+        # Removes previous line and adds in new line
+        if len(console_log) > 2:
+            trimmed_console_log = '\n'.join(console_log[:len(console_log)-2])
+            self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+        elif len(console_log) > 1:
+            trimmed_console_log = '\n'.join(console_log[:len(console_log)-2])
+            self.structure.ids.prompt.text = trimmed_console_log + \
+                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+        else:
+            trimmed_console_log = ' '.join(console_log[:len(console_log)-1])
+            self.structure.ids.prompt.text = trimmed_console_log + \
+                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
 
     def clear_console(self):
         """Console Clear Method [PRIVATE]
