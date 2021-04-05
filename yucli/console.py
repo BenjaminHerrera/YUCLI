@@ -49,7 +49,10 @@ class Console(App):
 
         # Displays greeting text upon window creation if applicable
         if self.greeting_text is not None:
-            self.structure.ids.prompt.text += self.greeting_text + "\n\n"
+            if self.greeting_text is "":
+                pass
+            else:
+                self.structure.ids.prompt.text += self.greeting_text + "\n\n"
 
     def build(self):
         """Window Constructor Method
@@ -85,6 +88,34 @@ class Console(App):
         """
         # Prints a new line with specified text
         self.structure.ids.prompt.text += _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+
+    def print_replace_line(self, text, header="INFO"):
+        """Line Replacer Method
+
+        Replaces the line before with the specified text
+
+        :param text: [STRING] Text to replace previous line in the console
+        :param header: [STRING] Type of header to append to new line
+        """
+        # Get history of lines on the console into list format
+        console_log = self.structure.ids.prompt.text.splitlines()
+
+        print(console_log)
+        print(len(console_log))
+
+        # Removes previous line and adds in new line
+        if len(console_log) > 2:
+            trimmed_console_log = '\n'.join(console_log[:len(console_log)-2])
+            self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+        elif len(console_log) > 1:
+            trimmed_console_log = '\n'.join(console_log[:len(console_log)-2])
+            self.structure.ids.prompt.text = trimmed_console_log + \
+                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+        else:
+            trimmed_console_log = ' '.join(console_log[:len(console_log)-1])
+            self.structure.ids.prompt.text = trimmed_console_log + \
+                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
 
     def clear_console(self):
         """Console Clear Method [PRIVATE]

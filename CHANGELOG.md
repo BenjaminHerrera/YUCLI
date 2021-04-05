@@ -10,7 +10,10 @@ v1.1.0.0
   
 - Add
   ---
-    - Made it so that functions assigned to a command need to have a `arguments` parameter
+    - Added `print_replace_line()` method in `Console()` to allow for replacing of text
+    - Added a feature that upon specifying an empty string to the `greeting_text` parameter in `Console()`, no new lines 
+      are produced
+    - Added a requirement so that functions assigned to a command need to have an `arguments` parameter
     - Added the ability to use custom fonts
   
 - Changed
