@@ -12,6 +12,10 @@ v1.1.0.0
   ---
     - Made it so that functions assigned to a command need to have a `arguments` parameter
     - Added the ability to use custom fonts
+  
+- Changed
+  -------
+    - Changed `new_line()` method to `print_new_line()` for clarity
 
 v1.0.0.2 (3 March 2021)
 -----------------------

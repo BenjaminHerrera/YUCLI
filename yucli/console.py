@@ -75,7 +75,7 @@ class Console(App):
         # Returns structure class
         return self.structure
 
-    def new_line(self, text, header="INFO"):
+    def print_new_line(self, text, header="INFO"):
         """Insert Text Method
 
         Inserts text into console
