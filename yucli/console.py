@@ -100,9 +100,6 @@ class Console(App):
         # Get history of lines on the console into list format
         console_log = self.structure.ids.prompt.text.splitlines()
 
-        print(console_log)
-        print(len(console_log))
-
         # Removes previous line and adds in new line
         if len(console_log) > 2:
             trimmed_console_log = '\n'.join(console_log[:len(console_log)-2])
