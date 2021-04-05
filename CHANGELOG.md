@@ -1,13 +1,13 @@
 CHANGELOG
 =========
 
-v1.1.0.1 (5 March 2021)
+v1.1.0.1 (5 April 2021)
 -----------------------
 - Fix
   ---
     - [ HOTFIX ] Removed debug messages
   
-v1.1.0.0 (5 March 2021)
+v1.1.0.0 (5 April 2021)
 -----------------------
 - Fix
   ---
@@ -26,14 +26,14 @@ v1.1.0.0 (5 March 2021)
   -------
     - Changed `new_line()` method to `print_new_line()` for clarity
 
-v1.0.0.2 (3 March 2021)
+v1.0.0.2 (3 April 2021)
 -----------------------
 - Fix
   ---
     - [ HOTFIX ] Fixed "structure.kv" not found error and other potential "final not found" errors
     - [ HOTFIX ] Fixed new lines appearing before greeting message
 
-v1.0.0.1 (3 March 2021)
+v1.0.0.1 (3 April 2021)
 -----------------------
 - Fix
   ---
@@ -43,6 +43,6 @@ v1.0.0.1 (3 March 2021)
   ---
     - Added GitHub and PyPi URLS to README.md
 
-v1.0.0.0 (3 March 2021)
+v1.0.0.0 (3 April 2021)
 -----------------------
 - First Release!
