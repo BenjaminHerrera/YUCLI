@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+v1.1.0.1 (5 March 2021)
+-----------------------
+- Fix
+  ---
+    - [ HOTFIX ] Removed debug messages
+  
 v1.1.0.0 (5 March 2021)
 -----------------------
 - Fix
