@@ -3,6 +3,10 @@ CHANGELOG
 
 v1.2.0.0
 --------
+- Fix
+  ---
+    - Fixed potential issues with the `print_replace_line()` method
+
 - Add
   ---
     - Added a scheduler task method called `schedule_task()`
