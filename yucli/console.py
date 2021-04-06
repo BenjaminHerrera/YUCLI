@@ -5,6 +5,7 @@ from time import strftime, gmtime
 from kivy.config import Config
 from kivy.lang import Builder
 from kivy.app import App
+from kivy.clock import Clock
 import os
 
 # Loads design profile
@@ -137,3 +138,25 @@ class Console(App):
         """
         # Registers command and function to Structure instance
         self.structure.commands[command] = function
+
+    @staticmethod
+    def schedule_task(function, time):
+        """Scheduler Wrapper Method
+
+        Applies a schedule task on a function that will be executed after a specific time
+        :param function: [FUNCTION] Function to execute upon scheduled task
+        :param time: [FLOAT] Time after to execute
+        """
+        # Schedules the execution of the given function once
+        Clock.schedule_once(function, time)
+
+    @staticmethod
+    def schedule_recurring_task(function, interval):
+        """Recurring Scheduler Wrapper Method
+
+        Applies a recurring schedule task on a function that will be executed on a given interval
+        :param function: [FUNCTION] Function to execute upon scheduled task
+        :param interval: [FLOAT] How often to execute given function
+        """
+        # Schedules the recurring execution of the given function
+        Clock.schedule_interval(function, interval)
