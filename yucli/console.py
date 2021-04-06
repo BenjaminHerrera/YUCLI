@@ -119,26 +119,6 @@ class Console(App):
                 self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
                                                  _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
 
-    def clear_console(self):
-        """Console Clear Method [PRIVATE]
-
-        Clears all content on the console
-        :return args: [LIST] Returns args
-        """
-        # Clears console
-        self.structure.ids.prompt.text = ""
-
-    def register_command(self, command, function):
-        """Command Register Method
-
-        Registers command for the console
-
-        :param command: [STRING] command to register
-        :param function: [OBJECT] function to call upon entering of command
-        """
-        # Registers command and function to Structure instance
-        self.structure.commands[command] = function
-
     @staticmethod
     def schedule_task(function, time):
         """Scheduler Wrapper Method
@@ -160,3 +140,24 @@ class Console(App):
         """
         # Schedules the recurring execution of the given function
         Clock.schedule_interval(function, interval)
+
+    def clear_console(self):
+        """Console Clear Method [PRIVATE]
+
+        Clears all content on the console
+        :return args: [LIST] Returns args
+        """
+        # Clears console
+        self.structure.ids.prompt.text = ""
+
+    def register_command(self, command, function):
+        """Command Register Method
+
+        Registers command for the console
+
+        :param command: [STRING] command to register
+        :param function: [OBJECT] function to call upon entering of command
+        """
+        # Registers command and function to Structure instance
+        self.structure.commands[command] = function
+
