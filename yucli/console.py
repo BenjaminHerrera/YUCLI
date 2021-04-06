@@ -141,6 +141,16 @@ class Console(App):
         # Schedules the recurring execution of the given function
         Clock.schedule_interval(function, interval)
 
+    @staticmethod
+    def unschedule_task(function):
+        """Unscheduler Wrapper Method
+
+        Unschedule a given task
+        :param function: [FUNCTION] Function to unschedule
+        """
+        # Unschedule function
+        Clock.unschedule(function)
+
     def clear_console(self):
         """Console Clear Method [PRIVATE]
 
@@ -160,4 +170,3 @@ class Console(App):
         """
         # Registers command and function to Structure instance
         self.structure.commands[command] = function
-
