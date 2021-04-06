@@ -6,7 +6,8 @@ v1.2.0.0
 - Add
   ---
     - Added a scheduler task method called `schedule_task()`
-    - Added a recurring scheduler method task called `schedule_recurring_task()`
+    - Added a recurring scheduler task method called `schedule_recurring_task()`
+    - Added an unscheduler method called `unschedule_task()`
 
 v1.1.1.0 (6 April 2021)
 -----------------------
