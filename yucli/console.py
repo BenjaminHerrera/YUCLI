@@ -101,18 +101,22 @@ class Console(App):
         console_log = self.structure.ids.prompt.text.splitlines()
 
         # Removes previous line and adds in new line
-        if len(console_log) > 2:
-            trimmed_console_log = '\n'.join(console_log[:len(console_log)-2])
-            self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
-                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
-        elif len(console_log) > 1:
-            trimmed_console_log = '\n'.join(console_log[:len(console_log)-2])
-            self.structure.ids.prompt.text = trimmed_console_log + \
-                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+        if console_log[0] == self.greeting_text.splitlines()[0]:
+            if len(console_log) == len(self.greeting_text.splitlines()) + 2:
+                trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
+                self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                 _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+            else:
+                trimmed_console_log = "\n".join(console_log[:len(console_log)-2])
+                self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                 _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
         else:
-            trimmed_console_log = ' '.join(console_log[:len(console_log)-1])
-            self.structure.ids.prompt.text = trimmed_console_log + \
-                                             _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+            if len(console_log) <= 2:
+                self.structure.ids.prompt.text = _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+            else:
+                trimmed_console_log = "\n".join(console_log[:len(console_log) - 2])
+                self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                 _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
 
     def clear_console(self):
         """Console Clear Method [PRIVATE]
