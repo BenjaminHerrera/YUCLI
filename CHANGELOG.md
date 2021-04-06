@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+v1.2.0.0
+--------
+- Add
+  ---
+    - Added a scheduler task method called `schedule_task()`
+    - Added a recurring scheduler method task called `schedule_recurring_task()`
+
 v1.1.1.0 (6 April 2021)
 -----------------------
 - Fix
@@ -28,8 +35,8 @@ v1.1.0.0 (5 April 2021)
     - Added a requirement so that functions assigned to a command need to have an `arguments` parameter
     - Added the ability to use custom fonts
   
-- Changed
-  -------
+- Change
+  ------
     - Changed `new_line()` method to `print_new_line()` for clarity
 
 v1.0.0.2 (3 April 2021)
