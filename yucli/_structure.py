@@ -51,11 +51,14 @@ class Structure(Widget):
         self.schedule_refocus()
 
         # Calls whatever method is stored in
-        if self.ids.user_input.text.split()[0] in self.commands:
-            try:
-                self.commands[self.ids.user_input.text.split()[0]](arguments=self.ids.user_input.text.split()[1:])
-            except IndexError:
-                pass
+        if len(self.ids.user_input.text.split()) is not 0:
+            if self.ids.user_input.text.split()[0] in self.commands:
+                try:
+                    self.commands[self.ids.user_input.text.split()[0]](arguments=self.ids.user_input.text.split()[1:])
+                except IndexError:
+                    pass
+        else:
+            pass
 
         # Clears user input
         self.ids.user_input.text = ""

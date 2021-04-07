@@ -6,6 +6,7 @@ v1.2.0.0
 - Fix
   ---
     - Fixed potential issues in the `print_replace_line()` method
+    - Fixed an issue involving programs crashing upon entering an empty input into the input bar
 
 - Add
   ---
