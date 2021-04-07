@@ -12,6 +12,12 @@ v1.2.0.0
     - Added a scheduler task method called `schedule_task()`
     - Added a recurring scheduler task method called `schedule_recurring_task()`
     - Added an unscheduler method called `unschedule_task()`
+    - Added a user input enabler method called `enable_input()`
+    - Added a user input disabler method called `disable_input()`
+
+- Remove
+  ------
+    - Removed comments in `structure.kv`
 
 v1.1.1.0 (6 April 2021)
 -----------------------

@@ -169,6 +169,20 @@ class Console(App):
         # Unschedule function
         Clock.unschedule(function)
 
+    def disable_input(self):
+        """Input Disabler Method
+
+        Disables user input
+        """
+        self.structure.disable = True
+
+    def enable_input(self):
+        """Input Disabler Method
+
+        Disables user input
+        """
+        self.structure.disable = False
+
     def clear_console(self):
         """Console Clear Method [PRIVATE]
 
