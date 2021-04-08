@@ -1,8 +1,7 @@
 CHANGELOG
 =========
 
-v1.2.0.0
---------
+# v1.2.0.0 (7 April 2021)
 - Fix
   ---
     - Fixed potential issues in the `print_replace_line()` method
@@ -25,20 +24,17 @@ v1.2.0.0
   ------
     - Changed `arguments` requirement for command functions to `args`
 
-v1.1.1.0 (6 April 2021)
------------------------
+# v1.1.1.0 (6 April 2021)
 - Fix
   ---
     - Fixed issues with the `print_replace_line()` method
 
-v1.1.0.1 (5 April 2021)
------------------------
+# v1.1.0.1 (5 April 2021)
 - Fix
   ---
     - [ HOTFIX ] Removed debug messages
   
-v1.1.0.0 (5 April 2021)
------------------------
+# v1.1.0.0 (5 April 2021)
 - Fix
   ---
     - Fixed code commenting inconsistencies
@@ -56,15 +52,13 @@ v1.1.0.0 (5 April 2021)
   ------
     - Changed `new_line()` method to `print_new_line()` for clarity
 
-v1.0.0.2 (3 April 2021)
------------------------
+# v1.0.0.2 (3 April 2021)
 - Fix
   ---
     - [ HOTFIX ] Fixed "structure.kv" not found error and other potential "final not found" errors
     - [ HOTFIX ] Fixed new lines appearing before greeting message
 
-v1.0.0.1 (3 April 2021)
------------------------
+# v1.0.0.1 (3 April 2021)
 - Fix
   ---
     - [ HOTFIX ] Changed default greeting text to fit with current version
@@ -73,6 +67,5 @@ v1.0.0.1 (3 April 2021)
   ---
     - Added GitHub and PyPi URLS to README.md
 
-v1.0.0.0 (3 April 2021)
------------------------
+# v1.0.0.0 (3 April 2021)
 - First Release!
