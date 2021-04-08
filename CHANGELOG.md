@@ -10,12 +10,12 @@ v1.2.0.0
 
 - Add
   ---
-    - Added a scheduler task method called `schedule_task()`
-    - Added a recurring scheduler task method called `schedule_recurring_task()`
-    - Added an unscheduler method called `unschedule_task()`
-    - Added a user input enabler method called `enable_input()`
-    - Added a user input disabler method called `disable_input()`
-    - Added the ability to close instance of the console via the `stop()` method
+    - Added the ability to schedule tasks via `schedule_task()`
+    - Added the ability to schedule recurring tasks via `schedule_recurring_task()`
+    - Added the ability to unschedule tasks via `unschedule_task()`
+    - Added the ability to enable user input via `enable_input()`
+    - Added the ability to disable user input via `disable_input()`
+    - Added the ability to close instance of the console via `stop()`
 
 - Remove
   ------
