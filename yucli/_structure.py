@@ -54,7 +54,7 @@ class Structure(Widget):
         if len(self.ids.user_input.text.split()) is not 0:
             if self.ids.user_input.text.split()[0] in self.commands:
                 try:
-                    self.commands[self.ids.user_input.text.split()[0]](arguments=self.ids.user_input.text.split()[1:])
+                    self.commands[self.ids.user_input.text.split()[0]](args=self.ids.user_input.text.split()[1:])
                 except IndexError:
                     pass
         else:

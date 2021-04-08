@@ -19,6 +19,10 @@ v1.2.0.0
 - Remove
   ------
     - Removed comments in `structure.kv`
+  
+- Change
+  ------
+    - Changed `arguments` requirement for command functions to `args`
 
 v1.1.1.0 (6 April 2021)
 -----------------------
