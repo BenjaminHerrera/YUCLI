@@ -32,40 +32,4 @@
             foreground_color: "white"
             multiline: False
             on_text_validate: root.on_enter()
-
-# <Structure>
-#
-#     AnchorLayout:
-#         size: root.width, root.height
-#         anchor_y: "top"
-#
-#         ScrollView:
-#             id: scroll
-#             size_hint: (1, root.text_input_top_height)
-#             scroll_type: ['bars']
-#             bar_width: 13
-#
-#             TextInput:
-#                 id: prompt
-#                 text: ""
-#                 markup: True
-#                 focus: False
-#                 font_name: root.text_font
-#                 background_color: "white"
-#                 readonly: True
-#                 height: max(self.minimum_height, scroll.height)
-#                 size_hint: 1, None
-#                 on_focus: root._schedule_refocus()
-#
-#     AnchorLayout:
-#         size: root.width, 27
-#         anchor_y: "bottom"
-#
-#         TextInput:
-#             id: user_input
-#             focus: True
-#             background_color: "#1a1a1a"
-#             font_name: root.text_font
-#             foreground_color: "white"
-#             multiline: False
-#             on_text_validate: root.on_enter()
+            disabled: root.disable

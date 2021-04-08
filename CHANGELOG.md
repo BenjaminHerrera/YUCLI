@@ -1,6 +1,30 @@
 CHANGELOG
 =========
 
+v1.2.0.0
+--------
+- Fix
+  ---
+    - Fixed potential issues in the `print_replace_line()` method
+    - Fixed an issue involving programs crashing upon entering an empty input into the input bar
+
+- Add
+  ---
+    - Added the ability to schedule tasks via `schedule_task()`
+    - Added the ability to schedule recurring tasks via `schedule_recurring_task()`
+    - Added the ability to unschedule tasks via `unschedule_task()`
+    - Added the ability to enable user input via `enable_input()`
+    - Added the ability to disable user input via `disable_input()`
+    - Added the ability to close instance of the console via `stop()`
+
+- Remove
+  ------
+    - Removed comments in `structure.kv`
+  
+- Change
+  ------
+    - Changed `arguments` requirement for command functions to `args`
+
 v1.1.1.0 (6 April 2021)
 -----------------------
 - Fix
@@ -28,8 +52,8 @@ v1.1.0.0 (5 April 2021)
     - Added a requirement so that functions assigned to a command need to have an `arguments` parameter
     - Added the ability to use custom fonts
   
-- Changed
-  -------
+- Change
+  ------
     - Changed `new_line()` method to `print_new_line()` for clarity
 
 v1.0.0.2 (3 April 2021)

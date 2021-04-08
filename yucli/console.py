@@ -5,6 +5,7 @@ from time import strftime, gmtime
 from kivy.config import Config
 from kivy.lang import Builder
 from kivy.app import App
+from kivy.clock import Clock
 import os
 
 # Loads design profile
@@ -18,7 +19,7 @@ class Console(App):
     """
 
     def __init__(self, width, height, title="Console", resizable=False,
-                 greeting_text="YUCLI [v1.1.1.0]", icon_path=None,
+                 greeting_text="YUCLI [v1.2.0.0]", icon_path=None,
                  font_path=None, **kwargs):
         """Constructor for console class
 
@@ -78,6 +79,15 @@ class Console(App):
         # Returns structure class
         return self.structure
 
+    def stop(self):
+        """Window Grace Closer Method
+
+        Gracefully closes window upon being called
+        :return: True
+        """
+        # Closes current instance
+        App.get_running_app().stop()
+
     def print_new_line(self, text, header="INFO"):
         """Insert Text Method
 
@@ -101,22 +111,86 @@ class Console(App):
         console_log = self.structure.ids.prompt.text.splitlines()
 
         # Removes previous line and adds in new line
-        if console_log[0] == self.greeting_text.splitlines()[0]:
-            if len(console_log) == len(self.greeting_text.splitlines()) + 2:
-                trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
-                self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
-                                                 _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+        if "USER" in console_log[-1]:
+            if console_log[0] == self.greeting_text.splitlines()[0]:
+                if len(console_log) == len(self.greeting_text.splitlines()) + 2:
+                    trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
+                    self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                     _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                else:
+                    trimmed_console_log = "\n".join(console_log[:len(console_log)-2])
+                    self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                     _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
             else:
-                trimmed_console_log = "\n".join(console_log[:len(console_log)-2])
-                self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
-                                                 _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                if len(console_log) <= 2:
+                    self.structure.ids.prompt.text = _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                else:
+                    trimmed_console_log = "\n".join(console_log[:len(console_log)-2])
+                    self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                     _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
         else:
-            if len(console_log) <= 2:
-                self.structure.ids.prompt.text = _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+            if console_log[0] == self.greeting_text.splitlines()[0]:
+                if len(console_log) == len(self.greeting_text.splitlines()) + 2:
+                    trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
+                    self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                     _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                else:
+                    trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
+                    self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                     _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
             else:
-                trimmed_console_log = "\n".join(console_log[:len(console_log) - 2])
-                self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
-                                                 _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                if len(console_log) == 1:
+                    self.structure.ids.prompt.text = _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                else:
+                    trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
+                    self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                     _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+
+    @staticmethod
+    def schedule_task(function, time):
+        """Scheduler Wrapper Method
+
+        Applies a schedule task on a function that will be executed after a specific time
+        :param function: [FUNCTION] Function to execute upon scheduled task
+        :param time: [FLOAT] Time after to execute
+        """
+        # Schedules the execution of the given function once
+        Clock.schedule_once(function, time)
+
+    @staticmethod
+    def schedule_recurring_task(function, interval):
+        """Recurring Scheduler Wrapper Method
+
+        Applies a recurring schedule task on a function that will be executed on a given interval
+        :param function: [FUNCTION] Function to execute upon scheduled task
+        :param interval: [FLOAT] How often to execute given function
+        """
+        # Schedules the recurring execution of the given function
+        Clock.schedule_interval(function, interval)
+
+    @staticmethod
+    def unschedule_task(function):
+        """Unscheduler Wrapper Method
+
+        Unschedule a given task
+        :param function: [FUNCTION] Function to unschedule
+        """
+        # Unschedule function
+        Clock.unschedule(function)
+
+    def disable_input(self):
+        """Input Disabler Method
+
+        Disables user input
+        """
+        self.structure.disable = True
+
+    def enable_input(self):
+        """Input Disabler Method
+
+        Disables user input
+        """
+        self.structure.disable = False
 
     def clear_console(self):
         """Console Clear Method [PRIVATE]

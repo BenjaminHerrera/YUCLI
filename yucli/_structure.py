@@ -1,6 +1,7 @@
 from yucli import _header
-from kivy.uix.widget import Widget
 from time import strftime, gmtime
+from kivy.properties import ObjectProperty
+from kivy.uix.widget import Widget
 from kivy.clock import Clock
 import os
 
@@ -12,6 +13,7 @@ class Structure(Widget):
     """
     # Class variables
     text_font = os.path.dirname(os.path.realpath(__file__)) + "/asset/CascadiaCode.ttf"
+    disable = ObjectProperty(False)
 
     def __init__(self, width, height, font_path=None, **kwargs):
         """Constructor for Structure class
@@ -49,11 +51,14 @@ class Structure(Widget):
         self.schedule_refocus()
 
         # Calls whatever method is stored in
-        if self.ids.user_input.text.split()[0] in self.commands:
-            try:
-                self.commands[self.ids.user_input.text.split()[0]](arguments=self.ids.user_input.text.split()[1:])
-            except IndexError:
-                pass
+        if len(self.ids.user_input.text.split()) is not 0:
+            if self.ids.user_input.text.split()[0] in self.commands:
+                try:
+                    self.commands[self.ids.user_input.text.split()[0]](args=self.ids.user_input.text.split()[1:])
+                except IndexError:
+                    pass
+        else:
+            pass
 
         # Clears user input
         self.ids.user_input.text = ""
