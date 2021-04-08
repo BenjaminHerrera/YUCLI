@@ -79,6 +79,15 @@ class Console(App):
         # Returns structure class
         return self.structure
 
+    def stop(self):
+        """Window Grace Closer Method
+
+        Gracefully closes window upon being called
+        :return: True
+        """
+        # Closes current instance
+        App.get_running_app().stop()
+
     def print_new_line(self, text, header="INFO"):
         """Insert Text Method
 

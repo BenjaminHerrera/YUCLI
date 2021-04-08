@@ -15,6 +15,7 @@ v1.2.0.0
     - Added an unscheduler method called `unschedule_task()`
     - Added a user input enabler method called `enable_input()`
     - Added a user input disabler method called `disable_input()`
+    - Added the ability to close instance of the console via the `stop()` method
 
 - Remove
   ------
