@@ -59,6 +59,7 @@ class Console(App):
         """Window Constructor Method
 
         Constructors window with specified properties
+
         :return Structure: [Structure] Class that houses widgets for console window
         """
         # Constructs console window
@@ -83,6 +84,7 @@ class Console(App):
         """Window Grace Closer Method
 
         Gracefully closes window upon being called
+
         :return: True
         """
         # Closes current instance
@@ -151,6 +153,7 @@ class Console(App):
         """Scheduler Wrapper Method
 
         Applies a schedule task on a function that will be executed after a specific time
+
         :param function: [FUNCTION] Function to execute upon scheduled task
         :param time: [FLOAT] Time after to execute
         """
@@ -162,6 +165,7 @@ class Console(App):
         """Recurring Scheduler Wrapper Method
 
         Applies a recurring schedule task on a function that will be executed on a given interval
+
         :param function: [FUNCTION] Function to execute upon scheduled task
         :param interval: [FLOAT] How often to execute given function
         """
@@ -173,6 +177,7 @@ class Console(App):
         """Unscheduler Wrapper Method
 
         Unschedule a given task
+
         :param function: [FUNCTION] Function to unschedule
         """
         # Unschedule function
@@ -196,6 +201,7 @@ class Console(App):
         """Console Clear Method [PRIVATE]
 
         Clears all content on the console
+
         :return args: [LIST] Returns args
         """
         # Clears console

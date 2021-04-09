@@ -19,6 +19,7 @@ class Structure(Widget):
         """Constructor for Structure class
 
         Constructs an instance of the structure class
+
         :param width: [INTEGER] Width specification of the console window
         :param height: [INTEGER] Height specification of the console window
         :param font_path: [STRING] Path to custom font if specified
