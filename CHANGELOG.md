@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+# v1.2.1.0 (9 April 2021)
+- Fix
+  ---
+  - Fixed another printing error in the `print_replace_line()` method
+
 # v1.2.0.0 (7 April 2021)
 - Fix
   ---

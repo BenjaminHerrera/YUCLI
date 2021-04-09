@@ -19,7 +19,7 @@ class Console(App):
     """
 
     def __init__(self, width, height, title="Console", resizable=False,
-                 greeting_text="YUCLI [v1.2.0.0]", icon_path=None,
+                 greeting_text="YUCLI [v1.2.1.0]", icon_path=None,
                  font_path=None, **kwargs):
         """Constructor for console class
 
@@ -135,7 +135,7 @@ class Console(App):
                     self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
                                                      _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
                 else:
-                    trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
+                    trimmed_console_log = "\n".join(console_log[:len(console_log)])
                     self.structure.ids.prompt.text = trimmed_console_log + "\n" + \
                                                      _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
             else:
