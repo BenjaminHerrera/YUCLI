@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+# v1.3.0.0
+- Change
+  ------
+  - Changed certain variables under `Console` into private variables
+
 # v1.2.1.0 (9 April 2021)
 - Fix
   ---
