@@ -98,7 +98,7 @@ class Console(App):
         :return: True
         """
         # Closes current instance
-        App.get_running_app().stop()
+        App.stop(self)
 
     def print_new_line(self, text, header="INFO"):
         """Insert Text Method

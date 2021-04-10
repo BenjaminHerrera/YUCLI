@@ -2,6 +2,10 @@ CHANGELOG
 =========
 
 # v1.3.0.0
+- Fix
+  ---
+  - Fixed recursion errors upon calling `stop()`
+
 - Add
   ---
   - Added a feature which enables the displaying of python errors
