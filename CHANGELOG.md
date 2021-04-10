@@ -4,7 +4,7 @@ CHANGELOG
 # v1.3.0.0
 - Change
   ------
-  - Changed certain variables under `Console` into private variables
+  - Changed the publicity of the variables under `Console` so that it won't be easy to access
 
 # v1.2.2.0 (9 April 2021)
 - Fix
