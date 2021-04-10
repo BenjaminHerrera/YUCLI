@@ -2,6 +2,10 @@ CHANGELOG
 =========
 
 # v1.3.0.0
+- Add
+  ---
+  - Added a feature which enables the displaying of python errors
+
 - Change
   ------
   - Changed the publicity of the variables under `Console` so that it won't be easy to access
