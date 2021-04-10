@@ -137,9 +137,14 @@ class Console(App):
                     self._structure.ids.prompt.text = trimmed_console_log + "\n" + \
                                                       _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
                 else:
-                    trimmed_console_log = "\n".join(console_log[:len(console_log)])
-                    self._structure.ids.prompt.text = trimmed_console_log + "\n" + \
-                                                      _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                    if len(console_log) > len(self._greeting_text.splitlines()):
+                        trimmed_console_log = "\n".join(console_log[:len(console_log)-1])
+                        self._structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                         _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
+                    else:
+                        trimmed_console_log = "\n".join(console_log[:len(console_log)])
+                        self._structure.ids.prompt.text = trimmed_console_log + "\n" + \
+                                                         _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
             else:
                 if len(console_log) == 1:
                     self._structure.ids.prompt.text = _header.header(header, strftime("%H:%M", gmtime())) + text + "\n"
