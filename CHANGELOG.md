@@ -5,6 +5,7 @@ CHANGELOG
 - Fix
   ---
   - Fixed recursion errors upon calling `stop()`
+  - Fixed custom title not showing up when a custom title was specified
 
 - Add
   ---
