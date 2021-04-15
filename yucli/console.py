@@ -58,16 +58,6 @@ class Console(App):
             else:
                 self._structure.ids.prompt.text += self._greeting_text + "\n\n"
 
-    @staticmethod
-    def enable_debugging():
-        """Debug Enabler Method
-
-        Enables debug messages so that developers can traceback to errors
-        """
-        # Set logging level to low
-        Config.set('kivy', 'log_level', 'warning')
-        Config.write()
-
     def build(self):
         """Window Constructor Method
 

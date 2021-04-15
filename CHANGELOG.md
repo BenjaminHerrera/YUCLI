@@ -6,10 +6,7 @@ CHANGELOG
   ---
   - Fixed recursion errors upon calling `stop()`
   - Fixed custom title not showing up when a custom title was specified
-
-- Add
-  ---
-  - Added a feature which enables the displaying of python errors
+  - Fixed an issue where python errors would not appear
 
 - Change
   ------
