@@ -48,6 +48,9 @@ class Console(App):
         # Creates a widgets class to initiate widgets
         self._structure = _structure.Structure(self._width, self._height, self._font_path)
 
+        # Set window title
+        self.title = title
+
         # Displays greeting text upon window creation if applicable
         if self._greeting_text is not None:
             if self._greeting_text is "":
