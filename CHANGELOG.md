@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+# v1.3.0.0 (15 April 2021)
+- Fix
+  ---
+  - Fixed recursion errors upon calling `stop()`
+  - Fixed custom title not showing up when a custom title was specified
+  - Fixed an issue where python errors would not appear
+
+- Add
+  ---
+  - Added the ability to unregister commands via `unregister_command()`
+
+- Change
+  ------
+  - Changed the publicity of the variables under `Console` so that it won't be easy to access
+
 # v1.2.2.0 (9 April 2021)
 - Fix
   ---
