@@ -227,3 +227,13 @@ class Console(App):
         """
         # Registers command and function to Structure instance
         self._structure.commands[command] = function
+
+    def unregister_command(self, command):
+        """Command Unregistering Method
+
+        Unregister command from the console
+
+        :param command: [STRING] command to unregister
+        """
+        # Unregister command
+        del self._structure.commands[command]

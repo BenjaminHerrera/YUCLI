@@ -8,6 +8,10 @@ CHANGELOG
   - Fixed custom title not showing up when a custom title was specified
   - Fixed an issue where python errors would not appear
 
+- Add
+  ---
+  - Added the ability to unregister commands via `unregister_command()`
+
 - Change
   ------
   - Changed the publicity of the variables under `Console` so that it won't be easy to access
