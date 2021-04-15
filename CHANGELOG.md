@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-# v1.3.0.0
+# v1.3.0.0 (15 April 2021)
 - Fix
   ---
   - Fixed recursion errors upon calling `stop()`
