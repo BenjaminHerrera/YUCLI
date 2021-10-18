@@ -1,7 +1,7 @@
 YUCLI
 =====
 
-YUCLI (Your Ultimate Command Line Interface) is a customizable command line
+YUCLI (Your Ultimate Command Line Interpreter) is a customizable command line
 interface environment with everything you need for your Python projects.
 
 Links
